@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM.M Network Solutions Company Profile</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7fb;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* Header / Cover */
+        .cover {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            color: white;
+            padding: 3rem 0;
+            border-radius: 0 0 2rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .cover-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .logo-placeholder {
+            width: 100px;
+            height: 100px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(5px);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            border: 2px solid rgba(255,255,255,0.3);
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+        }
+
+        .company-name {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .meta {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.1);
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            font-size: 1rem;
+        }
+
+        /* Cards and sections */
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: #0f172a;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: #2563eb;
+            border-radius: 2px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .icon-large {
+            font-size: 2.5rem;
+            color: #2563eb;
+            margin-bottom: 1.2rem;
+        }
+
+        /* Value items */
+        .values-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .value-item {
+            background: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 500;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border-left: 4px solid #2563eb;
+        }
+
+        /* Testimonial */
+        .testimonial {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 2rem;
+            margin: 2rem 0;
+            border: 1px solid #e2e8f0;
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '"';
+            font-size: 6rem;
+            color: #2563eb;
+            opacity: 0.2;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-family: serif;
+        }
+
+        .testimonial-text {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: #334155;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .testimonial-title {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        /* Team */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .team-member {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 1.5rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .avatar {
+            width: 100px;
+            height: 100px;
+            background: #e2e8f0;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #475569;
+            font-size: 2rem;
+            font-weight: 600;
+            background: linear-gradient(145deg, #dbeafe, #eff6ff);
+            border: 3px solid white;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+        }
+
+        .member-name {
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .member-role {
+            color: #2563eb;
+            font-size: 0.9rem;
+            margin: 0.3rem 0 0.5rem;
+        }
+
+        .member-desc {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        /* Partners / certs */
+        .badge-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .badge {
+            background: white;
+            border: 1px solid #dbeafe;
+            padding: 0.6rem 1.5rem;
+            border-radius: 40px;
+            font-weight: 500;
+            color: #1e40af;
+            font-size: 0.95rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        /* Contact */
+        .contact-section {
+            background: white;
+            border-radius: 2rem;
+            padding: 2.5rem;
+            margin: 2rem 0;
+            border: 1px solid #e2e8f0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            width: 45px;
+            height: 45px;
+            background: #dbeafe;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2563eb;
+            font-size: 1.2rem;
+        }
+
+        .contact-detail {
+            font-weight: 500;
+        }
+
+        .contact-label {
+            color: #64748b;
+            font-size: 0.8rem;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px dashed #cbd5e1;
+            margin: 2rem 0;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin: 1.5rem 0;
+        }
+
+        .social-links a {
+            color: #2563eb;
+            font-size: 1.5rem;
+            transition: color 0.2s;
+        }
+
+        .social-links a:hover {
+            color: #1e3a8a;
+        }
+
+        @media (max-width: 600px) {
+            .company-name {
+                font-size: 2rem;
+            }
+            .meta {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cover Section -->
+    <div class="cover">
+        <div class="container">
+            <div class="cover-content">
+                <div class="logo-placeholder">
+                    <span>P</span>
+                </div>
+                <h1 class="company-name">PM.M Network Solutions</h1>
+                <div class="tagline">Innovating Tomorrow, Today.</div>
+                <div class="meta">
+                    <span class="meta-item"><i class="fas fa-globe"></i> www.pm.mnetworksolutions.com</span>
+                    <span class="meta-item"><i class="fas fa-calendar-alt"></i> Est. 2025</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Who We Are -->
+        <section>
+            <h2 class="section-title">Who We Are</h2>
+            <p style="font-size: 1.2rem; max-width: 800px;">PM.M Networks Solutions is a forward-thinking technology firm dedicated to transforming how small and medium-sized businesses leverage digital tools. We specialize in creating custom software, streamlining IT infrastructure, and providing cybersecurity peace of mind. Founded in 2024, we have grown from a two-person startup into a trusted partner for over 20 businesses across the region.</p>
+        </section>
+
+        <!-- Mission & Vision -->
+        <div class="card-grid" style="margin-top: 2rem;">
+            <div class="card">
+                <div class="icon-large"><i class="fas fa-bullseye"></i></div>
+                <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">Our Mission</h3>
+                <p>To empower businesses with accessible, robust, and innovative technology solutions that drive growth and efficiency.</p>
+            </div>
+            <div class="card">
+                <div class="icon-large"><i class="fas fa-eye"></i></div>
+                <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">Our Vision</h3>
+                <p>To be the catalyst for digital transformation in the local business community, creating a future where technology is a seamless enabler of success.</p>
+            </div>
+        </div>
+
+        <!-- Core Values -->
+        <section style="margin-top: 3rem;">
+            <h2 class="section-title">Our Core Values</h2>
+            <div class="values-list">
+                <span class="value-item"><i class="fas fa-check-circle" style="color:#2563eb; margin-right: 8px;"></i> Integrity</span>
+                <span class="value-item"><i class="fas fa-lightbulb" style="color:#2563eb; margin-right: 8px;"></i> Innovation</span>
+                <span class="value-item"><i class="fas fa-users" style="color:#2563eb; margin-right: 8px;"></i> Client-Centric</span>
+                <span class="value-item"><i class="fas fa-star" style="color:#2563eb; margin-right: 8px;"></i> Excellence</span>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section style="margin-top: 3rem;">
+            <h2 class="section-title">Services & Solutions</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <i class="fas fa-code icon-large"></i>
+                    <h3>Custom Software Development</h3>
+                    <p>Tailored platforms designed to automate your unique workflows.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-headset icon-large"></i>
+                    <h3>IT Consulting & Management</h3>
+                    <p>Proactive monitoring and strategic advice for 24/7 operations.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-shield-alt icon-large"></i>
+                    <h3>Cybersecurity</h3>
+                    <p>Comprehensive protection against modern digital threats.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-cloud icon-large"></i>
+                    <h3>Cloud Solutions</h3>
+                    <p>Seamless migration and management of cloud infrastructure.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section style="margin-top: 3rem;">
+            <h2 class="section-title">Why Choose Us</h2>
+            <div class="card-grid">
+                <div class="card"><i class="fas fa-briefcase icon-large"></i> <strong>Industry Experience:</strong> Over 5 years of combined technical experience.</div>
+                <div class="card"><i class="fas fa-headset icon-large"></i> <strong>Local Support:</strong> Real humans available via phone and on-site within 24h.</div>
+                <div class="card"><i class="fas fa-chart-line icon-large"></i> <strong>Proven Track Record:</strong> 95% client retention over 5 years.</div>
+                <div class="card"><i class="fas fa-puzzle-piece icon-large"></i> <strong>Tailored Approach:</strong> "Off-the-shelf" thinking, custom-made execution.</div>
+            </div>
+        </section>
+
+        <!-- Testimonial -->
+        <section style="margin-top: 3rem;">
+            <h2 class="section-title">Client Testimonial</h2>
+            <div class="testimonial">
+                <p class="testimonial-text">PM.M Networks Solutions didn't just fix our IT issues; they re-engineered our entire workflow. We've saved 20 hours a week in manual data entry thanks to their custom software.</p>
+                <div>
+                    <span class="testimonial-author">— Perminus Moseti, CEO</span>
+                    <span class="testimonial-title">Metro Retail Group</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team -->
+        <section style="margin-top: 3rem;">
+            <h2 class="section-title">Meet The Leadership</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="avatar">PM</div>
+                    <div class="member-name">Perminus Moseti Magembe</div>
+                    <div class="member-role">CEO & Co-Founder</div>
+                    <div class="member-desc">Former programmer, 5 years experience.</div>
+                </div>
+                <div class="team-member">
+                    <div class="avatar">MS</div>
+                    <div class="member-name">Minage Shamim</div>
+                    <div class="member-role">CTO</div>
+                    <div class="member-desc">Degree in CS, specializing in AI and machine learning.</div>
+                </div>
+                <div class="team-member">
+                    <div class="avatar">BA</div>
+                    <div class="member-name">Bairum Aurah</div>
+                    <div class="member-role">Head of Operations</div>
+                    <div class="member-desc">Ensures projects delivered on time, under budget.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications & Partners -->
+        <section style="margin-top: 3rem;">
+            <h2 class="section-title">Certifications & Partners</h2>
+            <div class="badge-container">
+                <span class="badge"><i class="fab fa-microsoft" style="margin-right: 5px;"></i> Microsoft Gold Partner</span>
+                <span class="badge"><i class="fas fa-cloud" style="margin-right: 5px;"></i> AWS Advanced Consulting Partner</span>
+                <span class="badge"><i class="fas fa-certificate" style="margin-right: 5px;"></i> Certified B Corporation (Pending)</span>
+                <span class="badge"><i class="fas fa-lock" style="margin-right: 5px;"></i> ISO 27001 Certified</span>
+            </div>
+        </section>
+
+        <!-- Contact Information -->
+        <section style="margin-top: 3rem;">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-section">
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <div class="contact-label">Address</div>
+                            <div class="contact-detail">145,Aoko Road,Starehe,78701</div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div>
+                            <div class="contact-label">Phone</div>
+                            <div class="contact-detail">(+254) 748906135 </div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <div class="contact-label">Email</div>
+                            <div class="contact-detail">perminus375@gmail.com</div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div style="text-align: center;">
+                    <div style="margin-bottom: 1rem; font-weight: 600;">Follow us</div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2025 PM.M Networks Solutions. All rights reserved.</p>
+        </div>
+
+    </div> <!-- end container -->
+</body>
+</html>
